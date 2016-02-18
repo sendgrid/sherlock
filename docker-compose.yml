@@ -1,0 +1,15 @@
+app:
+  build: .
+  links:
+    - redis
+  environment:
+    - REDIS_HOST=redis
+    - REDIS_PORT=6379
+
+redis:
+  image: redis:2.8
+
+swag:
+  build: swagger
+  links:
+    - app

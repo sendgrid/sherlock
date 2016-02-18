@@ -1,0 +1,68 @@
+# Example YAML to get you started quickly.
+# Be aware that YAML has indentation based scoping.
+# Code completion support is available so start typing for available options.
+swagger: '2.0'
+
+# This is your document metadata
+info:
+  version: "0.0.0"
+  title: SHERLOCK
+
+produces:
+  - application/json
+  - text/plain
+
+# Describe your paths here
+paths:
+  # This is a path endpoint. Change it.
+  /lock:
+    # This is a HTTP operation
+    get:
+      operationId: getAllLocks
+      # Describe this verb here. Note: you can use markdown
+      tags:
+        - bot
+      description: |
+        Retrieve all lock states.
+      responses:
+        # Response code
+        200:
+          description: Returns all locks
+  '/lock/{key}':
+    # This is a HTTP operation
+    get:
+      operationId: getLock
+      tags:
+        - bot
+      # Describe this verb here. Note: you can use markdown
+      description: |
+        Get an individual lock
+      parameters:
+        - name: key
+          in: path
+          type: string
+          key: the key to retrive
+    post:
+      operationId: createLock
+      tags:
+        - bot
+      # Describe this verb here. Note: you can use markdown
+      description: |
+        Create an individual lock
+      parameters:
+        - name: key
+          in: path
+          type: string
+          key: the key to lock
+    delete:
+      operationId: unlock
+      tags:
+        - bot
+      # Describe this verb here. Note: you can use markdown
+      description: |
+        Remove an individual lock
+      parameters:
+        - name: key
+          in: path
+          type: string
+          key: the key to unlock
