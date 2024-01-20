@@ -1,6 +1,6 @@
 source 'https://gems.sendgrid.net'
 
-gem 'sinatra'
+gem 'sinatra', '>= 4.0.0'
 
 gem 'envlock'
 
